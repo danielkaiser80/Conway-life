@@ -5,7 +5,7 @@ const numRows = 30;
 const numCols = 30;
 
 const redundant = [
-  [0.1],
+  [0, 1],
   [0, -1],
   [1, -1],
   [-1, 1],
