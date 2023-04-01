@@ -12,7 +12,7 @@ const redundant = [
   [1, 1],
   [-1, -1],
   [1, 0],
-  [-1, 0]
+  [-1, 0],
 ];
 
 function App() {
@@ -88,7 +88,7 @@ function App() {
         style={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "center"
+          justifyContent: "center",
         }}
       >
         <button
@@ -110,7 +110,7 @@ function App() {
         style={{
           display: "grid",
           justifyContent: "center",
-          gridTemplateColumns: `repeat(${numCols}, 20px)`
+          gridTemplateColumns: `repeat(${numCols}, 20px)`,
         }}
       >
         {grid.map((rows, i) =>
@@ -127,7 +127,7 @@ function App() {
               style={{
                 width: 15,
                 height: 15,
-                background: grid[i][k] ? "#000" : undefined
+                background: grid[i][k] ? "#000" : undefined,
               }}
             ></div>
           ))
@@ -140,7 +140,7 @@ function App() {
             marginLeft: "auto",
             marginRight: "auto",
             maxWidth: "800px",
-            backgroundColor: "#000"
+            backgroundColor: "#000",
           }}
         >
           <h2>Game Of Life Transitions</h2>
