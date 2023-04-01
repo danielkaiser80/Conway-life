@@ -19,11 +19,7 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "prettier"
-  ],
+  "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
     "no-plusplus": [
       "error",
@@ -37,9 +33,7 @@
       "error",
       {
         "props": true,
-        "ignorePropertyModificationsFor": [
-          "gridCopy"
-        ]
+        "ignorePropertyModificationsFor": ["gridCopy"]
       }
     ]
   },

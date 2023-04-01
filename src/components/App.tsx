@@ -1,6 +1,7 @@
-/* eslint-disable react/no-array-index-key -- the grid won' be resorted */
-import React, { useCallback, useRef, useState } from "react";
+/* eslint-disable react/no-array-index-key -- the grid won't be resorted */
+import { useCallback, useRef, useState } from "react";
 import produce from "immer";
+import Cell from "./Cell";
 
 const numRows = 30;
 const numCols = 30;
@@ -16,21 +17,19 @@ const redundant = [
   [-1, 0],
 ];
 
-function App() {
+const App = () => {
   const generateEmptyGrid = () => {
-    const rows = [];
+    const rows: number[][] = [];
     for (let i = 0; i < numRows; i++) {
       rows.push(Array.from(Array(numCols), () => 0));
     }
     return rows;
   };
 
-  const [grid, setGrid] = useState(() => {
-    return generateEmptyGrid();
-  });
+  const [grid, setGrid] = useState(generateEmptyGrid);
 
   const generateRandomStuff = () => {
-    const rows = [];
+    const rows: number[][] = [];
     for (let i = 0; i < numRows; i++) {
       rows.push(
         Array.from(Array(numCols), () => (Math.random() > 0.5 ? 1 : 0))
@@ -93,20 +92,10 @@ function App() {
           justifyContent: "center",
         }}
       >
-        <button
-          onClick={() => {
-            setGrid(generateEmptyGrid());
-          }}
-          type="button"
-        >
+        <button onClick={() => setGrid(generateEmptyGrid())} type="button">
           Clear
         </button>
-        <button
-          onClick={() => {
-            setGrid(generateRandomStuff());
-          }}
-          type="button"
-        >
+        <button onClick={() => setGrid(generateRandomStuff())} type="button">
           Random Stuff
         </button>
       </div>
@@ -119,19 +108,14 @@ function App() {
       >
         {grid.map((rows, i) =>
           rows.map((col, k) => (
-            <div
-              className="table"
+            <Cell
+              alive={grid[i][k]}
+              key={`${i}-${k}`}
               onClick={() => {
                 const newGrid = produce(grid, (gridCopy) => {
                   gridCopy[i][k] = grid[i][k] ? 0 : 1;
                 });
                 setGrid(newGrid);
-              }}
-              key={`${i}-${k}`}
-              style={{
-                width: 15,
-                height: 15,
-                background: grid[i][k] ? "#000" : undefined,
               }}
             />
           ))
@@ -172,6 +156,6 @@ function App() {
       </div>
     </>
   );
-}
+};
 
 export default App;
