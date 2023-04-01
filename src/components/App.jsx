@@ -1,4 +1,5 @@
-import React, { useRef, useState, useCallback } from "react";
+/* eslint-disable react/no-array-index-key -- the grid won' be resorted */
+import React, { useCallback, useRef, useState } from "react";
 import produce from "immer";
 
 const numRows = 30;
@@ -81,6 +82,7 @@ function App() {
             runSimulation();
           }
         }}
+        type="button"
       >
         {Simulation ? "Stop" : "start"} Simulation
       </button>
@@ -95,6 +97,7 @@ function App() {
           onClick={() => {
             setGrid(generateEmptyGrid());
           }}
+          type="button"
         >
           Clear
         </button>
@@ -102,6 +105,7 @@ function App() {
           onClick={() => {
             setGrid(generateRandomStuff());
           }}
+          type="button"
         >
           Random Stuff
         </button>
@@ -129,7 +133,7 @@ function App() {
                 height: 15,
                 background: grid[i][k] ? "#000" : undefined,
               }}
-            ></div>
+            />
           ))
         )}
       </div>
