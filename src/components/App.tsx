@@ -2,20 +2,7 @@
 import { useCallback, useRef, useState } from "react";
 import produce from "immer";
 import Cell from "./Cell";
-
-const numRows = 30;
-const numCols = 30;
-
-const redundant = [
-  [0, 1],
-  [0, -1],
-  [1, -1],
-  [-1, 1],
-  [1, 1],
-  [-1, -1],
-  [1, 0],
-  [-1, 0],
-];
+import countService, { numCols, numRows } from "../service/count.service";
 
 const App = () => {
   const generateEmptyGrid = () => {
@@ -47,18 +34,11 @@ const App = () => {
     if (!runningRef.current) {
       return;
     }
-    setGrid((g) => {
-      return produce(g, (gridCopy) => {
+    setGrid((g) =>
+      produce(g, (gridCopy) => {
         for (let i = 0; i < numRows; i++) {
           for (let k = 0; k < numCols; k++) {
-            let neighbors = 0;
-            redundant.forEach(([x, y]) => {
-              const newI = i + x;
-              const newK = k + y;
-              if (newI >= 0 && newK >= 0 && newI < numRows && newK < numCols) {
-                neighbors += g[newI][newK];
-              }
-            });
+            const neighbors = countService.countNeighbors(i, k, g);
             if (neighbors < 2 || neighbors > 3) {
               gridCopy[i][k] = 0;
             } else if (g[i][k] === 0 && neighbors === 3) {
@@ -66,8 +46,8 @@ const App = () => {
             }
           }
         }
-      });
-    });
+      })
+    );
     setTimeout(runSimulation, 100);
   }, []);
 
