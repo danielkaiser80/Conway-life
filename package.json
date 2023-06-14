@@ -1,8 +1,7 @@
 {
   "name": "conways-game-of-life",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
+  "private": true,
   "main": "src/index.tsx",
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -55,5 +54,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "packageManager": "yarn@3.6.0"
 }
