@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key -- the grid won't be resorted */
 import { useCallback, useRef, useState } from "react";
-import produce from "immer";
+import { produce } from "immer";
 import Cell from "./Cell";
 import countService, { numCols, numRows } from "../service/count.service";
 
