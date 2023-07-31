@@ -19,7 +19,7 @@ const App = () => {
     const rows: number[][] = [];
     for (let i = 0; i < numRows; i++) {
       rows.push(
-        Array.from(Array(numCols), () => (Math.random() > 0.5 ? 1 : 0))
+        Array.from(Array(numCols), () => (Math.random() > 0.5 ? 1 : 0)),
       );
     }
     return rows;
@@ -87,7 +87,7 @@ const App = () => {
         }}
       >
         {grid.map((rows, i) =>
-          rows.map((col, k) => (
+          rows.map((_, k) => (
             <Cell
               alive={grid[i][k]}
               key={`${i}-${k}`}
@@ -98,7 +98,7 @@ const App = () => {
                 setGrid(newGrid);
               }}
             />
-          ))
+          )),
         )}
       </div>
       <div style={{ justifyContent: "space-between", textAlign: "left" }}>

@@ -1,3 +1,4 @@
-jest.config.js
-vite.config.js
+vite.config.ts
+vitest.config.ts
 config/
+test/

@@ -15,6 +15,7 @@ const Cell = ({ alive, onClick }: CellProps) => (
       margin: "3px",
       backgroundColor: alive ? "#000" : "#6bbe92",
     }}
+    role="checkbox"
   />
 );
 
