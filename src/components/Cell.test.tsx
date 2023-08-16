@@ -1,6 +1,4 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
-import { expect } from "vitest";
 import Cell from "./Cell";
 
 test("clicking first button changes value to O", () => {

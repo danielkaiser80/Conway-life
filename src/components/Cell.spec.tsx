@@ -1,4 +1,5 @@
 import { fireEvent, render } from "@testing-library/react";
+import { vi } from "vitest";
 import Cell from "./Cell";
 
 describe("Cell component", () => {
@@ -17,15 +18,12 @@ describe("Cell component", () => {
   });
 
   it("should call onClick handler when clicked", () => {
-    const onClickMock = jest.fn();
+    const onClickMock = vi.fn();
     const { container } = render(<Cell alive={1} onClick={onClickMock} />);
     const cellElement = container.firstChild;
 
-    if (!cellElement) {
-      fail("rendering failed");
-    }
-
-    fireEvent.click(cellElement);
+    expect(cellElement).not.toBeNull();
+    fireEvent.click(cellElement!); // force IntelliJ to understand the "expect" line above
 
     expect(onClickMock).toHaveBeenCalled();
   });
