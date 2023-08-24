@@ -1,7 +1,10 @@
 import { useCallback, useRef, useState } from "react";
 import { produce } from "immer";
 import Cell from "./Cell";
-import countService, { numCols, numRows } from "../service/count.service";
+import countService from "../service/count.service";
+
+export const numRows = 30;
+export const numCols = 30;
 
 const App = () => {
   const generateEmptyGrid = () => {

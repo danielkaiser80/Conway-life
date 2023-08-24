@@ -1,6 +1,3 @@
-export const numRows = 30;
-export const numCols = 30;
-
 const redundant = [
   [0, 1],
   [0, -1],
@@ -13,6 +10,9 @@ const redundant = [
 ];
 
 const countNeighbors = (i: number, k: number, g: number[][]) => {
+  const numRows = g.length;
+  const numCols = g[0].length;
+
   let neighbors = 0;
   redundant.forEach(([x, y]) => {
     const newI = i + x;
