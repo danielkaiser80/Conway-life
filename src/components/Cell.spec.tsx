@@ -20,10 +20,9 @@ describe("Cell component", () => {
   it("should call onClick handler when clicked", () => {
     const onClickMock = vi.fn();
     const { container } = render(<Cell alive={1} onClick={onClickMock} />);
-    const cellElement = container.firstChild;
 
-    expect(cellElement).not.toBeNull();
-    fireEvent.click(cellElement!); // force IntelliJ to understand the "expect" line above
+    const cellElement = container.firstChild!;
+    fireEvent.click(cellElement);
 
     expect(onClickMock).toHaveBeenCalled();
   });
