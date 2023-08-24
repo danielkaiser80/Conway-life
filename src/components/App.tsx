@@ -29,24 +29,24 @@ const App = () => {
   const runningRef = useRef(Simulation);
   runningRef.current = Simulation;
 
+  const produceNewGrid = (g: number[][]) => (gridCopy: number[][]) => {
+    for (let i = 0; i < numRows; i++) {
+      for (let k = 0; k < numCols; k++) {
+        const neighbors = countService.countNeighbors(i, k, g);
+        if (neighbors < 2 || neighbors > 3) {
+          gridCopy[i][k] = 0;
+        } else if (g[i][k] === 0 && neighbors === 3) {
+          gridCopy[i][k] = 1;
+        }
+      }
+    }
+  };
+
   const runSimulation = useCallback(() => {
     if (!runningRef.current) {
       return;
     }
-    setGrid((g) =>
-      produce(g, (gridCopy) => {
-        for (let i = 0; i < numRows; i++) {
-          for (let k = 0; k < numCols; k++) {
-            const neighbors = countService.countNeighbors(i, k, g);
-            if (neighbors < 2 || neighbors > 3) {
-              gridCopy[i][k] = 0;
-            } else if (g[i][k] === 0 && neighbors === 3) {
-              gridCopy[i][k] = 1;
-            }
-          }
-        }
-      }),
-    );
+    setGrid((g) => produce(g, produceNewGrid(g)));
     setTimeout(runSimulation, 100);
   }, []);
 
