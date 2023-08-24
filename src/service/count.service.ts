@@ -9,18 +9,29 @@ const redundant = [
   [-1, 0],
 ];
 
+const isWithinBounds = (
+  i: number,
+  k: number,
+  numRows: number,
+  numCols: number,
+) => i >= 0 && k >= 0 && i < numRows && k < numCols;
+
 const countNeighbors = (i: number, k: number, g: number[][]) => {
   const numRows = g.length;
   const numCols = g[0].length;
 
   let neighbors = 0;
-  redundant.forEach(([x, y]) => {
+
+  for (let iterator = 0; iterator < redundant.length; iterator++) {
+    const [x, y] = redundant[iterator];
     const newI = i + x;
     const newK = k + y;
-    if (newI >= 0 && newK >= 0 && newI < numRows && newK < numCols) {
+
+    if (isWithinBounds(newI, newK, numRows, numCols)) {
       neighbors += g[newI][newK];
     }
-  });
+  }
+
   return neighbors;
 };
 
