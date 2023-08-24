@@ -2,6 +2,7 @@ import { useCallback, useRef, useState } from "react";
 import { produce } from "immer";
 import Cell from "./Cell";
 import countService from "../service/count.service";
+import Transitions from "./documentation/Transitions";
 
 export const numRows = 30;
 export const numCols = 30;
@@ -65,7 +66,7 @@ const App = () => {
         }}
         type="button"
       >
-        {Simulation ? "Stop" : "start"} Simulation
+        {Simulation ? "Stop" : "Start"} Simulation
       </button>
       <div
         style={{
@@ -103,39 +104,7 @@ const App = () => {
           )),
         )}
       </div>
-      <div style={{ justifyContent: "space-between", textAlign: "left" }}>
-        <ul
-          style={{
-            textAlign: "left",
-            marginLeft: "auto",
-            marginRight: "auto",
-            maxWidth: "800px",
-            backgroundColor: "#000",
-          }}
-        >
-          <h2>Game Of Life Transitions</h2>
-          <li>
-            {" "}
-            Any live cell with fewer than two live neighbours dies, as if by
-            underpopulation.
-          </li>
-          <li>
-            {" "}
-            Any live cell with two or three live neighbours lives on to the next
-            generation.
-          </li>
-          <li>
-            {" "}
-            Any live cell with more than three live neighbours dies, as if by
-            overpopulation.
-          </li>
-          <li>
-            {" "}
-            Any dead cell with exactly three live neighbours becomes a live
-            cell, as if by reproduction.
-          </li>
-        </ul>
-      </div>
+      <Transitions />
     </>
   );
 };

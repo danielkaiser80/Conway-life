@@ -1,5 +1,8 @@
 body {
-  font: normal 14px/100% "Andale Mono", AndaleMono, monospace;
+  font:
+    normal 14px/100% "Andale Mono",
+    AndaleMono,
+    monospace;
   color: #fff;
   height: 100vh;
   background-color: #374954;
