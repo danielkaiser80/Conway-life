@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key -- the grid won't be resorted */
 import { useCallback, useRef, useState } from "react";
 import { produce } from "immer";
 import Cell from "./Cell";
@@ -90,7 +89,7 @@ const App = () => {
           rows.map((_, k) => (
             <Cell
               alive={grid[i][k]}
-              key={`${i}-${k}`}
+              key={`${i}-${k}`} // eslint-disable-line react/no-array-index-key
               onClick={() => {
                 const newGrid = produce(grid, (gridCopy) => {
                   gridCopy[i][k] = grid[i][k] ? 0 : 1;
