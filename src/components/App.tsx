@@ -3,30 +3,11 @@ import { produce } from "immer";
 import Cell from "./Cell";
 import countService from "../service/count.service";
 import Transitions from "./documentation/Transitions";
-
-export const numRows = 30;
-export const numCols = 30;
+import gridGeneratorService from "../service/grid-generator.service";
+import { numCols, numRows } from "../config/constants";
 
 const App = () => {
-  const generateEmptyGrid = () => {
-    const rows: number[][] = [];
-    for (let i = 0; i < numRows; i++) {
-      rows.push(Array.from(Array(numCols), () => 0));
-    }
-    return rows;
-  };
-
-  const [grid, setGrid] = useState(generateEmptyGrid);
-
-  const generateRandomStuff = () => {
-    const rows: number[][] = [];
-    for (let i = 0; i < numRows; i++) {
-      rows.push(
-        Array.from(Array(numCols), () => (Math.random() > 0.5 ? 1 : 0)),
-      );
-    }
-    return rows;
-  };
+  const [grid, setGrid] = useState(gridGeneratorService.generateEmptyGrid);
 
   const [Simulation, setSimulation] = useState(false);
 
@@ -75,10 +56,16 @@ const App = () => {
           justifyContent: "center",
         }}
       >
-        <button onClick={() => setGrid(generateEmptyGrid())} type="button">
+        <button
+          onClick={() => setGrid(gridGeneratorService.generateEmptyGrid())}
+          type="button"
+        >
           Clear
         </button>
-        <button onClick={() => setGrid(generateRandomStuff())} type="button">
+        <button
+          onClick={() => setGrid(gridGeneratorService.generateRandomStuff())}
+          type="button"
+        >
           Random Stuff
         </button>
       </div>

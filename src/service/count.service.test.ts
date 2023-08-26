@@ -1,4 +1,10 @@
+import { vi } from "vitest";
 import countService from "./count.service";
+
+vi.mock("../config/constants", () => ({
+  numCols: 3,
+  numRows: 3,
+}));
 
 // Example grid for testing
 const grid = [
@@ -28,10 +34,8 @@ describe("countNeighbors", () => {
   });
 
   it("should return 0 correctly for an empty grid", () => {
-    const result = countNeighbors(1, 0, [
-      [0, 0],
-      [0, 0],
-    ]);
+    const emptyLine = [0, 0, 0];
+    const result = countNeighbors(1, 0, [emptyLine, emptyLine, emptyLine]);
     expect(result).toBe(0);
   });
 });
