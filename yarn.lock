@@ -1376,19 +1376,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/coverage-istanbul@npm:^0.34.2":
-  version: 0.34.2
-  resolution: "@vitest/coverage-istanbul@npm:0.34.2"
+"@vitest/coverage-istanbul@npm:^0.34.4":
+  version: 0.34.4
+  resolution: "@vitest/coverage-istanbul@npm:0.34.4"
   dependencies:
     istanbul-lib-coverage: ^3.2.0
     istanbul-lib-instrument: ^6.0.0
     istanbul-lib-report: ^3.0.1
     istanbul-lib-source-maps: ^4.0.1
     istanbul-reports: ^3.1.5
+    picocolors: ^1.0.0
     test-exclude: ^6.0.0
   peerDependencies:
     vitest: ">=0.32.0 <1"
-  checksum: 8824ba7531046a1b8d7e45815dbef6a3cd143eff0b67f6e80bbb96ac4cf3a82f3e89f2bedd7a327e506bb91efe8f6a4a5c7a9cf3db062b694d5813c0afafcbd9
+  checksum: 1bc60871f27eed7ab236a7a2100d5f486b3cd3af0172b5fb7112b0f1a2736e285b82f50c3e60a9267b5f3822df2ce6b73280a50eba5de2239fedcabc28f8ab78
   languageName: node
   linkType: hard
 
@@ -2083,7 +2084,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^6.4.1
     "@typescript-eslint/parser": ^6.4.1
     "@vitejs/plugin-react": ^4.0.4
-    "@vitest/coverage-istanbul": ^0.34.2
+    "@vitest/coverage-istanbul": ^0.34.4
     "@vitest/ui": ^0.34.2
     eslint: ^8.47.0
     eslint-config-airbnb: ^19.0.4
