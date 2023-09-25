@@ -1434,11 +1434,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/ui@npm:^0.34.2":
-  version: 0.34.2
-  resolution: "@vitest/ui@npm:0.34.2"
+"@vitest/ui@npm:^0.34.5":
+  version: 0.34.5
+  resolution: "@vitest/ui@npm:0.34.5"
   dependencies:
-    "@vitest/utils": 0.34.2
+    "@vitest/utils": 0.34.5
     fast-glob: ^3.3.0
     fflate: ^0.8.0
     flatted: ^3.2.7
@@ -1447,7 +1447,7 @@ __metadata:
     sirv: ^2.0.3
   peerDependencies:
     vitest: ">=0.30.1 <1"
-  checksum: 27772824dc78d6b6c4580c4f5a5a7eebcb1f0c2a3744de80381f8b766ed485cc88ae0978a8f28a46b02e35b80ea26a1ad7facf0054ab00c39670dff2e2bb4524
+  checksum: 49ce5df1b28b4ca2b1a8877d4c4e58d740071406541b6aae2687760ffa2e4344095f96f883cfc7f1cd09dc139e5d07817198e9720158578cd2cfe32bcecc00d9
   languageName: node
   linkType: hard
 
@@ -1459,6 +1459,17 @@ __metadata:
     loupe: ^2.3.6
     pretty-format: ^29.5.0
   checksum: 55081528a475413759bf752ec084ccfc013e1f549c4f9523535034c86aab6d2f8711ac44d462817d01d3ccb1608f9150809a94896a681be8602d78554b162037
+  languageName: node
+  linkType: hard
+
+"@vitest/utils@npm:0.34.5":
+  version: 0.34.5
+  resolution: "@vitest/utils@npm:0.34.5"
+  dependencies:
+    diff-sequences: ^29.4.3
+    loupe: ^2.3.6
+    pretty-format: ^29.5.0
+  checksum: 86f40d3acd43170c2fe9ca6478e57b840851cfba173a31282e2967322c9d98e0210c8399e97aeff26dc9354f00af79a6986332cfbcfeec4d067404b952f2d89f
   languageName: node
   linkType: hard
 
@@ -2084,7 +2095,7 @@ __metadata:
     "@typescript-eslint/parser": ^6.4.1
     "@vitejs/plugin-react": ^4.0.4
     "@vitest/coverage-istanbul": ^0.34.2
-    "@vitest/ui": ^0.34.2
+    "@vitest/ui": ^0.34.5
     eslint: ^8.47.0
     eslint-config-airbnb: ^19.0.4
     eslint-config-airbnb-typescript: ^17.1.0
