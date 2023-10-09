@@ -1167,10 +1167,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20.5.4":
+"@types/node@npm:*":
   version: 20.5.4
   resolution: "@types/node@npm:20.5.4"
   checksum: 18de76c990e1c298183661cfc7cf16c9384531538c8090cc27bc3cab801e7c46b9f6943591ab0433955dd57961601684cc0fb19ba2deee9609e137c91afd2e25
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.8.3":
+  version: 20.8.3
+  resolution: "@types/node@npm:20.8.3"
+  checksum: bfb88b341faeb19f8fd37306a3bf433721b876c6491d10fcb0b13fd26601fa36ee45113dd82b1e1c23e3c957dff5b99f81a16493cefa03abe797e41a2487a4f7
   languageName: node
   linkType: hard
 
@@ -2077,7 +2084,7 @@ __metadata:
     "@testing-library/jest-dom": ^6.1.2
     "@testing-library/react": ^14.0.0
     "@testing-library/user-event": ^14.4.3
-    "@types/node": ^20.5.4
+    "@types/node": ^20.8.3
     "@types/react": ^18.2.21
     "@types/react-dom": ^18.2.7
     "@typescript-eslint/eslint-plugin": ^6.4.1
